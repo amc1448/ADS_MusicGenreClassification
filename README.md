@@ -16,6 +16,4 @@ Here is that same sound wave converted to a Mel Spectrogram:
 ![jazz_melspectrogram](https://user-images.githubusercontent.com/78565736/208314770-b0526f7c-c769-42c9-b30a-57ce2307a2ab.png)
 
 # Methodology and Notebook Explanations
-We implemented, trained, and tested a variety of models in order to compare their performance.  
-
-
+We implemented, trained, and tested a variety of models in order to compare their performance. CNN_Models.ipynb contains pretrained ResNet18, ResNet50, and VGG16 models we finetuned to fit our data. Classifier_Models.ipynb contains various models/classifiers such as a decision tree classifier, random forest classifier, support vector machine, and more that we employed for our classification task. MLP_Models.ipynb contains a few perceptron models that we developed, tested, and sequentially built upon in order to increase test classification accuracy. In order to reduce redundancy, we only included tested models that are unique from one another as well as significant to our analysis, and omitted other redundant and insignifcant models that we analyzed
