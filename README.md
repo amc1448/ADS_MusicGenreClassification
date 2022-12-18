@@ -19,6 +19,7 @@ Here is that same sound wave converted to a Mel Spectrogram:
 We implemented, trained, and tested a variety of models in order to compare their performance. CNN_Models.ipynb contains pretrained ResNet18, ResNet50, and VGG16 models we finetuned to fit our data. Classifier_Models.ipynb contains various models/classifiers from the SKLearn package including a decision tree classifier, random forest classifier, support vector machine, and more that we employed for our classification task. MLP_Models.ipynb contains a few perceptron models that we developed, tested, and sequentially built upon in order to increase test classification accuracy. During the development process, we evaluated additional models within each of the three categories—but ultimately only included the models that proved more significant to our analysis and were not redundant to other models included.
 
 # Results
+## SKLearn Classifiers
 Among the SKLearn classifiers, we found that the Random Forest Classifier and the KNN Classifier performed the best on the dataset, with accuracies of 0.81415 and 0.80581, respectively. Both models had high accuracy across the board, but generally made mistakes in the same places—confusing many of the same genres most: disco and rock; rock and country; and jazz and classical.
 
 | Classifier    | Accuracy      |
@@ -31,6 +32,7 @@ Among the SKLearn classifiers, we found that the Random Forest Classifier and th
 | Decision Tree | 0.646         |
 | Adabooster    | 0.452         |
 
+## Multi-Layer Perceptrons
 We also tested two simple Multi-Layer Perceptron models. We built the models using Tensorflow. The first model consisted of just four dense layers, while the second added dropout layers and a fifth dropout layer. Both models were trained with an adamn optimizer and for 100 epochs—though accuracy for both models largely plateauted after 20 epochs. 
 
 | Classifier      | Accuracy      |
@@ -46,6 +48,7 @@ Model 2
 
 Both models performed well on the dataset, and outperformed all of the other kinds of models tested across both the SKLearn classifiers and the CNNs. The model that included dropout layers slightly outperformed the model that did not, but the difference between them was not as significant as we had initially expected.
 
+## CNNs
 To use the pre-trained CNN models, we used the mel spectrogram image representations of the sound files in the dataset instead of working from the features, like we did for the SKLearn classifiers and the Multi-Layer Perceptron models. The three models we chose to try are VGG16, ResNet18, and ResNet50. First, we processed the data and loaded it into a dataloader using PyTorch.
 Each model was trained for 100 epochs. The two ResNet models were initialized with an adam optimizer, a learning rate of 0.001, and Cross Entropy Loss. The VGG model used an SGD optimizer and a learning rate of 0.01.
 
