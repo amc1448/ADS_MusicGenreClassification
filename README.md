@@ -41,9 +41,11 @@ We also tested two simple Multi-Layer Perceptron models. We built the models usi
 | 5 DLs + Dropout | 0.913         |
 
 Model 1
+
 ![image](https://user-images.githubusercontent.com/98373786/208317549-06da95d5-ebb2-4a60-9009-c851a7991cb1.png)
 
 Model 2
+
 ![image](https://user-images.githubusercontent.com/98373786/208317585-ab0c1df1-1575-47e3-9a69-038ef55cfbbc.png)
 
 Both models performed well on the dataset, and outperformed all of the other kinds of models tested across both the SKLearn classifiers and the CNNs. The model that included dropout layers slightly outperformed the model that did not, but the difference between them was not as significant as we had initially expected.
