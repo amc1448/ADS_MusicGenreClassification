@@ -45,7 +45,7 @@ The AdaBoost Classifier underperformed when compared to the rest of the models. 
 
 
 ## Multi-Layer Perceptrons
-We also tested two simple Multi-Layer Perceptron models. We built the models using Tensorflow. The first model consisted of just four dense layers, while the second added dropout layers and a fifth dropout layer. Both models were trained with an adamn optimizer and for 100 epochs—though accuracy for both models largely plateauted after 20 epochs. 
+We also tested two simple Multi-Layer Perceptron models. We built the models using Tensorflow. The first model consisted of just four dense layers, yielding an accuracy of 0.902. The second model had five dense layers with the addition of dropout layers to reduce any potential overfitting, improve the generalization error, and generally make the model more robust. After training this model, we got a slightly improved accuracy of 0.913, demonstrating the effectiveness of adding dropout layers. Both models were trained with an adamn optimizer and for 100 epochs—though accuracy for both models largely plateauted after 20 epochs. 
 
 | Classifier      | Accuracy      |
 | --------------- | ------------- |
@@ -73,8 +73,8 @@ To use the pre-trained CNN models, we used the mel spectrogram image representat
 
 Of the three models, ResNet18 performed best with an accuracy of 71.7%, despite being the least complex and layered. In this case, the additional depth of ResNet50 and VGG16 did not improve on the classification accuracy of ResNet18. The more complex networks’ lesser performance is reflective of overfitting to the training data, as well as the vanishing gradient problem: that as CNNs become deeper, the network’s ability to backpropagate useful gradient information to initial layers is weakened—weakening the model’s performance on a whole.
 
-## Overall
-Overall, the multi-layer perceptron models trained on the 57 audio features performed the best, outperforming the CNNs, despite their greater complexity. This demonstrates that for the GTZAN dataset, using the sound feature data is preferable to their image representations in the form of spectrograms. It also demonstrates that a relatively simple fully-connected model can yield highly accurate results. If using a supervised learning model, our results suggest that using a RandomForest Classifier or KNN yields the best results.
+## Interpretation and Explanation of Our Results
+Overall, the multi-layer perceptron models trained on the 57 audio features performed the best, outperforming the CNNs despite their greater complexity. This demonstrates that for the GTZAN dataset, using the sound feature data is preferable to their image representations in the form of spectrograms. It also demonstrates that a relatively simple fully-connected model can yield highly accurate results. If using a supervised learning model, our results suggest that using a RandomForest Classifier or KNN yields the best results.
 
 
 
