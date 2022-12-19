@@ -58,11 +58,15 @@ Model 2
 Both models performed well on the dataset, and outperformed all of the other kinds of models tested across both the SKLearn classifiers and the CNNs. The model that included dropout layers slightly outperformed the model that did not, but the difference between them was not as significant as we had initially expected.
 
 ## CNNs
-To use the pre-trained CNN models, we used the mel spectrogram image representations of the sound files in the dataset instead of working from the features, like we did for the SKLearn classifiers and the Multi-Layer Perceptron models. The three models we chose to try are VGG16, ResNet18, and ResNet50. First, we processed the data and loaded it into a dataloader using PyTorch.
-Each model was trained for 100 epochs. The two ResNet models were initialized with an adam optimizer, a learning rate of 0.001, and Cross Entropy Loss. The VGG model used an SGD optimizer and a learning rate of 0.01.
+To use the pre-trained CNN models, we used the mel spectrogram image representations of the sound files in the dataset instead of working from the features, like we did for the SKLearn classifiers and the Multi-Layer Perceptron models. The three models we chose to try are VGG16, ResNet18, and ResNet50. First, we processed the data and loaded it into a dataloader using PyTorch. After calling the models, each model was trained for 100 epochs. The two ResNet models were initialized with an adam optimizer, a learning rate of 0.001, and Cross Entropy Loss. The VGG model used an SGD optimizer and a learning rate of 0.01.
 
 | Classifier    | Accuracy      |
 | ------------- | ------------- |
 | ResNet18      | 0.717         |
 | ResNet50      | 0.677         |
 | VGG16         | 0.535         |
+
+Of the three models, ResNet18 performed best with an accuracy of 71.7%, despite being the least complex and layered. The two more complex networks' lesser performance is reflective of overfitting to the training data, as well as the vanishing gradient problem: that as CNNs become deeper, the networks' ability to backpropagate useful gradient information to initial layers is weakened—weakening the respective model’s performance on a whole.
+
+
+
