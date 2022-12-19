@@ -32,6 +32,13 @@ Among the SKLearn classifiers, we found that the Random Forest Classifier and th
 | Decision Tree | 0.646         |
 | Adabooster    | 0.452         |
 
+## Interpretation and Explanation of Our Results
+The Random Forest Classifier performed best of all classifiers listed above. This is likely due to the features having a low correlation to each other, and thus allowing for more distinct decisions to be made for each tree in the forest. In addition, a number of estimators of 1000 proved to be sufficiently high for good accuracy results. Notice that the Decision Tree classifier performed relatively well by itself. This is an indicator that the Random Forest Classifier would perform even better.
+
+The K-Neighbors Classifier also performed quite well on the dataset. We used a K-value of 19 because it is where we saw accuracy peak. K-values of less than and more than 19 appeared to have a lower accuracy, so 19 is likely an optimal value. KNN is a common algorithm used in recommendation services, so it is logical that the K-Neighbors Classifier would perform well in a music genre classication role.
+
+The Support Vector Classifier performed relatively highly, so 
+
 ## Multi-Layer Perceptrons
 We also tested two simple Multi-Layer Perceptron models. We built the models using Tensorflow. The first model consisted of just four dense layers, while the second added dropout layers and a fifth dropout layer. Both models were trained with an adamn optimizer and for 100 epochs—though accuracy for both models largely plateauted after 20 epochs. 
 
