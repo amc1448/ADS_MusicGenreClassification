@@ -37,7 +37,12 @@ The Random Forest Classifier performed best of all classifiers listed above. Thi
 
 The K-Neighbors Classifier also performed quite well on the dataset. We used a K-value of 19 because it is where we saw accuracy peak. K-values of less than and more than 19 appeared to have a lower accuracy, so 19 is likely an optimal value. KNN is a common algorithm used in recommendation services, so it is logical that the K-Neighbors Classifier would perform well in a music genre classication role.
 
-The Support Vector Classifier performed relatively highly, so 
+The Support Vector Classifier performed relatively highly, so within a 58-dimensional space, there must exist a relatively good hyperplane separating the 10 classes.
+
+Logistic regression and the Stochastic Gradient Descent Classifier performed similarly and relatively high as well. Logistic regression likely did well because we utilized multinomial regression, and oue dataset is practically what the algorithm is designed to classify on. Stochastic Gradient Descent proved that a ‘max_iter’ of 5000, or 5000 passes over the training data was sufficiently large to descent the gradient curve and get our results - even with SGD only picking one point per iteration to update its weights.
+
+The AdaBoost Classifier underperformed when compared to the rest of the models. Even with a reasonably high maximum number of estimators, the AdaBoost Classifier appears to not do as well as other models. This is likely because our data is not well suited for the random, iterative subsampling and weight assignment inherent to AdaBoost.
+
 
 ## Multi-Layer Perceptrons
 We also tested two simple Multi-Layer Perceptron models. We built the models using Tensorflow. The first model consisted of just four dense layers, while the second added dropout layers and a fifth dropout layer. Both models were trained with an adamn optimizer and for 100 epochs—though accuracy for both models largely plateauted after 20 epochs. 
